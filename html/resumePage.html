@@ -59,6 +59,15 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
+        .container .content {
+            filter: blur(5px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .container.hovered .content {
+            filter: blur(0);
+        }
+
         h3 {
             border-bottom: 2px solid #f06;
             padding-bottom: 10px;
@@ -99,7 +108,7 @@
         <h1>Chase Pronger - Portfolio</h1>
     </header>
 
-    <nav class="navbar">
+    <nav class="navbar" style="position: sticky; top: 0; z-index: 1000;">
         <a href="../index.html">Home</a>
         <a href="resumePage.html">Resume</a>
         <a href="funFactPage.html">Fun Facts</a>
@@ -168,6 +177,18 @@
     <footer>
         &copy; 2023 Chase Pronger | <a href="mailto:prongerchase@gmail.com">Email</a> | <a href="https://www.instagram.com/chase__this/">Social Media</a>
     </footer>
+
+    <script>
+        document.querySelectorAll('.container').forEach(function(container) {
+            container.addEventListener('mouseover', function() {
+                container.classList.add('hovered');
+
+                setTimeout(function() {
+                    container.classList.remove('hovered');
+                }, 5000);
+            });
+        });
+    </script>
 </body>
 
 </html>
