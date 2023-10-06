@@ -166,16 +166,16 @@
 
         @media (max-width: 1000px) {
             .container {
-                flex-direction: column-reverse; /* Makes content appear first */
+                flex-direction: column-reverse;
             }
             
             .content {
-                margin: 20px 0; /* Adjusts the content margin */
+                margin: 20px 0;
             }
 
             .sidebar-left, .sidebar-right {
-                margin: 10px 0; /* Adds vertical margin for spacing */
-                flex: 1 0 100%; /* Takes full width */
+                margin: 10px 0;
+                flex: 1 0 100%;
             }
         }
     </style>
@@ -257,7 +257,7 @@
                 
                     postLink.href = `https://reddit.com${post.data.permalink}`;
                     postLink.textContent = post.data.title;
-                    postLink.target = "_blank"; // Open in a new tab
+                    postLink.target = "_blank";
                 
                     listItem.appendChild(postLink);
                     list.appendChild(listItem);
@@ -266,44 +266,42 @@
         });
     </script>
     <script>
-let correctWord = 'audio';
-let attempts = 0;
+        let correctWord = 'audio';
+        let attempts = 0;
 
-function checkWord() {
-    const inputElement = document.getElementById('word-input');
-    const inputWord = inputElement.value.toLowerCase();
-    let feedback = '';
+        function checkWord() {
+            const inputElement = document.getElementById('word-input');
+            const inputWord = inputElement.value.toLowerCase();
+            let feedback = '';
 
-    if (inputWord.length !== 5) {
-        alert('Please enter a 5 letter word.');
-        return;
-    }
-    for (let i = 0; i < 5; i++) {
-        if (inputWord[i] === correctWord[i]) {
-            feedback += inputWord[i].toUpperCase();
-        } else if (correctWord.includes(inputWord[i])) {
-            feedback += inputWord[i];
-        } else {
-            feedback += '-';
+            if (inputWord.length !== 5) {
+                alert('Please enter a 5 letter word.');
+                return;
+            }
+            for (let i = 0; i < 5; i++) {
+                if (inputWord[i] === correctWord[i]) {
+                    feedback += inputWord[i].toUpperCase();
+                } else if (correctWord.includes(inputWord[i])) {
+                    feedback += inputWord[i];
+                } else {
+                    feedback += '-';
+                }
+            }
+            attempts++;
+            const listItem = document.createElement('li');
+            listItem.textContent = feedback;
+            document.getElementById('word-list').appendChild(listItem);
+            inputElement.value = '';
+
+            if (inputWord === correctWord || attempts >= 6) {
+                if (inputWord === correctWord) {
+                    alert('Congratulations! You guessed the word.');
+                } else {
+                    alert(`Out of attempts! The correct word was ${correctWord}.`);
+                }
+                inputElement.disabled = true;
+            }
         }
-    }
-    attempts++;
-    const listItem = document.createElement('li');
-    listItem.textContent = feedback;
-    document.getElementById('word-list').appendChild(listItem);
-    inputElement.value = '';
-
-    if (inputWord === correctWord || attempts >= 6) {
-        // Game ends
-        if (inputWord === correctWord) {
-            alert('Congratulations! You guessed the word.');
-        } else {
-            alert(`Out of attempts! The correct word was ${correctWord}.`);
-        }
-        inputElement.disabled = true;
-    }
-}
     </script>
-
 </body>
 </html>

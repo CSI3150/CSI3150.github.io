@@ -4,62 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="icon" href="../img/gregcube.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2d2d2d;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        a {
+            color: #33aaff;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0077cc;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            margin-bottom: 20px;
+        }
+
+        nav td {
+            padding: 10px 20px;
+            background-color: #444;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #3a3a3a;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+
+        hr {
+            border-color: #f06;
+            margin: 20px 0;
+        }
+
+        footer {
+            padding: 10px 0;
+            background-color: #444;
+            text-align: center;
+        }
+    </style>
 </head>
 
-<body bgcolor="#f4f4f4">
+<body>
+    <center>
+        <header>
+            <h1>Chase Pronger - Portfolio</h1>
+            <hr>
+        </header>
 
-<center>
+        <nav>
+            <table cellspacing="1" cellpadding="10">
+                <tr>
+                    <td><a href="../index.html">Home</a></td>
+                    <td><a href="resumePage.html">Resume</a></td>
+                    <td><a href="funFactPage.html">Fun Facts</a></td>
+                </tr>
+            </table>
+        </nav>
 
-    <header>
-        <h1>Chase Pronger - Portfolio</h1>
-        <hr>
-    </header>
-
-    <nav>
-        <table bgcolor="#e0e0e0" cellspacing="1" cellpadding="10">
-            <tr>
-                <td><a href="../index.html">Home</a></td>
-                <td><a href="resumePage.html">Resume</a></td>
-                <td><a href="funFactPage.html">Fun Facts</a></td>
-            </tr>
-        </table>
-    </nav>
-    <br>
-
-    <section>
-        <h2>Some fun facts about me</h2>
+        <section>
+            <h2>Some fun facts about me</h2>
+            
+            <h3>Favorite Book</h3>
+            <figure>
+                <img src="../img/Dict.jpg" alt="Book Cover" width="200" border="1">
+                <figcaption>This is a dictionary</figcaption>
+            </figure>
+            <p><a href="https://www.amazon.com/Merriam-Webster-Dictionary-Copyright-Mass-Market-Paperback/dp/0877790957/ref=sr_1_2_sspa?keywords=dictionary&qid=1695348779&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Buy Here</a></p>
+            <hr>
+            
+            <h3>Favorite Track</h3>
+            <audio controls>
+                <source src="../audio/ReverbFart.mp3" type="audio/mpeg">
+            </audio>
+            <p><a href="https://www.youtube.com/watch?v=60Al2L7vSv8">Listen Here</a></p>
+            <hr>
+            
+            <h3>Favorite Movie/TV Series</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2QlupZ0qDFE?si=CIHo94NOjQjOl8OV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <hr>
+        </section>
         
-        <h3>Favorite Book</h3>
-        <figure>
-            <img src="../img/Dict.jpg" alt="Book Cover" width="200" border="1">
-            <figcaption>This is a dictionary</figcaption>
-        </figure>
-        <p><a href="https://www.amazon.com/Merriam-Webster-Dictionary-Copyright-Mass-Market-Paperback/dp/0877790957/ref=sr_1_2_sspa?keywords=dictionary&qid=1695348779&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Buy Here</a></p>
-        <hr>
-        
-        <h3>Favorite Track</h3>
-        <audio controls>
-            <source src="../audio/ReverbFart.mp3" type="audio/mpeg">
-        </audio>
-        <p><a href="https://www.youtube.com/watch?v=60Al2L7vSv8">Listen Here</a></p>
-        <hr>
-        
-        <h3>Favorite Movie/TV Series</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2QlupZ0qDFE?si=CIHo94NOjQjOl8OV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <hr>
-    </section>
-    
-    <footer>
-        <table bgcolor="#e0e0e0" cellspacing="0" cellpadding="10" width="60%">
-            <tr>
-                <td>
-                    <p>&copy; 2023 Chase Pronger | <a href="mailto:prongerchase@gmail.com">Email</a> | <a href="https://www.instagram.com/chase__this/">Social Media</a></p>
-                </td>
-            </tr>
-        </table>
-    </footer>
-</center>
+        <footer>
+            &copy; 2023 Chase Pronger | <a href="mailto:prongerchase@gmail.com">Email</a> | <a href="https://www.instagram.com/chase__this/">Social Media</a>
+        </footer>
+    </center>
 </body>
 </html>
