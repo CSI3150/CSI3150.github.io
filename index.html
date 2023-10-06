@@ -4,79 +4,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="icon" href="./img/gregcube.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2d2d2d;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        a {
+            color: #33aaff;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0077cc;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #444;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/heroimg.png');
+            background-size: cover;
+            background-position: center center;
+            height: 70vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero {
+            animation: fadeIn 2s;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #3a3a3a;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sidebar-left, .sidebar-right {
+            flex: 1;
+            background: #3a3a3a;
+            padding: 20px;
+            margin: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            flex: 3;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            background: #3a3a3a;
+        }
+
+        h3 {
+            border-bottom: 2px solid #f06;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+           margin-bottom: 10px;
+           color: #f0f0f0;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #444;
+        }
+
+        progress {
+            display: block;
+            width: 100%;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+
+        .fake-wordle {
+            padding: 10px;
+            background-color: #444;
+            border: 1px solid #ccc;
+        }
+
+        .fake-wordle h3 {
+            text-align: center;
+        }
+
+        #word-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            padding: 10px 0;
+            background-color: #444;
+            text-align: center;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column-reverse; /* Makes content appear first */
+            }
+            
+            .content {
+                margin: 20px 0; /* Adjusts the content margin */
+            }
+
+            .sidebar-left, .sidebar-right {
+                margin: 10px 0; /* Adds vertical margin for spacing */
+                flex: 1 0 100%; /* Takes full width */
+            }
+        }
+    </style>
 </head>
 
-<body bgcolor="#f4f4f4">
+<body>
+    <header>
+        <h1>Chase Pronger - Portfolio</h1>
+    </header>
 
-    <center>
-        <header>
-            <h1>Chase Pronger - Portfolio</h1>
-            <hr>
-        </header>
+    <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./html/resumePage.html">Resume</a>
+        <a href="./html/funFactPage.html">Fun Facts</a>
+    </nav>
+    
+    <div class="hero">
+        Welcome to My Portfolio
+    </div>
 
-        <nav>
-            <table bgcolor="#e0e0e0" cellspacing="1" cellpadding="10">
-                <tr>
-                    <td><a href="./index.html">Home</a></td>
-                    <td><a href="./html/resumePage.html">Resume</a></td>
-                    <td><a href="./html/funFactPage.html">Fun Facts</a></td>
-                </tr>
-            </table>
-        </nav>
+    <div class="container">
+        <div class="sidebar-left">
+            <h3>Top posts from r/programming</h3>
+            <ul id="redditPosts"></ul>        
+        </div>
+        
+        <div class="content">
+            <img src="./img/conceit.jpeg" alt="Chase Pronger" width="300" style="display: block; margin: 20px auto;" />
+            
+            <blockquote style="text-align:center;">
+                "Optimism expressed as conservation of ΔV."
+            </blockquote>
+            
+            <section>
+                <h2>About Me</h2>
+                <p>Hello! I'm a 23-year-old student currently pursuing a Bachelors of Integrated Studies undergraduate degree, and I'm in my final year of college. I grew up in Michigan with time split between Traverse City and Milford. I have always been passionate about technology and its vast possibilities.</p>
 
-        <br>
+                <p>Presently, I have the privilege to work at the Rochester Hills Public Library as an IT specialist. This role has sharpened my technical skills and has solidified my career goal: becoming a full stack developer. I'm driven by the desire to create seamless and intuitive digital experiences for users, and I'm always eager to learn and grow in the realm of web development.</p>
+                
+                <p>If you'd like to delve deeper into my journey or know more quirky facts about me, feel free to check out my <a href="./html/resumePage.html">Resume</a> and <a href="./html/funFactPage.html">Fun Facts</a> pages.</p>
+                
+                
+                <div class="progress-container">
+                    <progress value="116" max="130" style="width: 100%;"></progress>
+                    <span class="progress-text">116/130 credits</span>
+                </div>
+            </section>
+        </div>
 
-        <img src="./img/conceit.jpeg" alt="Chase Pronger" width="300" border="1">
+        <div class="sidebar-right">
+            <div class="fake-wordle">
+                <h3>Fake Wordle</h3>
+                <input type="text" id="word-input" placeholder="Enter 5 letter word" maxlength="5">
+                <button onclick="checkWord()">Submit</button>
+                <ul id="word-list"></ul>
+            </div>            
+            <Div>
+                <H4>Rules:</H4>
+                <p>If a letter is in the right position, it's capitalized. If it's in the word but in the wrong position, it's displayed as-is. If it's not in the word at all, a dash is displayed.</p>
+            </Div>
+        </div>
+    </div>
 
-        <br><br>
+    <footer>
+        &copy; 2023 Chase Pronger | <a href="mailto:prongerchase@gmail.com">Email</a> | <a href="https://www.instagram.com/chase__this/">Social Media</a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://www.reddit.com/r/programming/top.json?limit=10')
+            .then(response => response.json())
+            .then(data => {
+                const posts = data.data.children;
+                const list = document.getElementById('redditPosts');
+            
+                posts.forEach(post => {
+                    const listItem = document.createElement('li');
+                    const postLink = document.createElement('a');
+                
+                    postLink.href = `https://reddit.com${post.data.permalink}`;
+                    postLink.textContent = post.data.title;
+                    postLink.target = "_blank"; // Open in a new tab
+                
+                    listItem.appendChild(postLink);
+                    list.appendChild(listItem);
+                });
+            });
+        });
+    </script>
+    <script>
+let correctWord = 'audio';
+let attempts = 0;
 
-        <blockquote>
-            "Optimism expressed as conservation of ΔV."
-        </blockquote>
+function checkWord() {
+    const inputElement = document.getElementById('word-input');
+    const inputWord = inputElement.value.toLowerCase();
+    let feedback = '';
 
-        <br>
+    if (inputWord.length !== 5) {
+        alert('Please enter a 5 letter word.');
+        return;
+    }
+    for (let i = 0; i < 5; i++) {
+        if (inputWord[i] === correctWord[i]) {
+            feedback += inputWord[i].toUpperCase();
+        } else if (correctWord.includes(inputWord[i])) {
+            feedback += inputWord[i];
+        } else {
+            feedback += '-';
+        }
+    }
+    attempts++;
+    const listItem = document.createElement('li');
+    listItem.textContent = feedback;
+    document.getElementById('word-list').appendChild(listItem);
+    inputElement.value = '';
 
-        <section>
-            <h2>About Me</h2>
-            <table bgcolor="#e0e0e0" cellspacing="5" cellpadding="10" width="80%">
-                <tr>
-                    <td>
-                        <p>Hello! I'm a 23-year-old student currently pursuing a Bachelors of Integrated Studies undergraduate degree, and I'm in my final year of college. I grew up in Michigan with time split between Traverse City and Milford. I have always been passionate about technology and its vast possibilities.</p>
-
-                        <p>Presently, I have the privilege to work at the Rochester Hills Public Library as an IT specialist. This role has sharpened my technical skills and has solidified my career goal: becoming a full stack developer. I'm driven by the desire to create seamless and intuitive digital experiences for users, and I'm always eager to learn and grow in the realm of web development.</p>
-
-                        <p>If you'd like to delve deeper into my journey or know more quirky facts about me, feel free to check out my <a href="./html/resumePage.html">Resume</a> and <a href="./html/funFactPage.html">Fun Facts</a> pages.</p>
-                    </td>
-                </tr>
-            </table>
-        </section>
-
-        <br>
-
-<table bgcolor="#e0e0e0" cellspacing="0" cellpadding="10" width="50%">
-    <tr>
-        <td>
-            Progress: <progress value="116" max="130" style="width: 100%;"></progress>
-        </td>
-    </tr>
-</table>
-
-        <br><hr><br>
-
-        <footer>
-            <table bgcolor="#e0e0e0" cellspacing="0" cellpadding="10" width="60%">
-                <tr>
-                    <td>
-                        <p>&copy; 2023 Chase Pronger | <a href="mailto:prongerchase@gmail.com">Email</a> | <a href="https://www.instagram.com/chase__this/">Social Media</a></p>
-                    </td>
-                </tr>
-            </table>
-        </footer>
-
-    </center>
+    if (inputWord === correctWord || attempts >= 6) {
+        // Game ends
+        if (inputWord === correctWord) {
+            alert('Congratulations! You guessed the word.');
+        } else {
+            alert(`Out of attempts! The correct word was ${correctWord}.`);
+        }
+        inputElement.disabled = true;
+    }
+}
+    </script>
 
 </body>
-
 </html>
